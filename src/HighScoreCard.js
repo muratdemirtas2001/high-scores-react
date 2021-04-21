@@ -25,7 +25,6 @@ function HighScoreCard({ scores }) {
                       </div>
                     );
                   })}
-                <h2></h2>
               </div>
             );
           })}
