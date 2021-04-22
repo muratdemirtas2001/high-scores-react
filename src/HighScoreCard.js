@@ -1,4 +1,5 @@
 import React from "react";
+import PlayerScore from "./PlayerScore";
 function HighScoreCard({ scores }) {
   return (
     <>
@@ -18,12 +19,7 @@ function HighScoreCard({ scores }) {
                     return parseFloat(secondScore.s) - parseFloat(firstScore.s);
                   })
                   .map((score) => {
-                    return (
-                      <div className="card-row">
-                        <h2 className="score-name">{score.n}</h2>
-                        <h2 className="score-point">{score.s}</h2>
-                      </div>
-                    );
+                    return <PlayerScore score={score} />;
                   })}
               </div>
             );
