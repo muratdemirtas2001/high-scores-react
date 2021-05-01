@@ -4,26 +4,18 @@ function HighScoreCard({ scores }) {
   return (
     <>
       <div className="high-scores-wrapper">
-        <h1 className="wrapper-title">High Scores per Country</h1>
+        <h2 className="wrapper-title">High Scores per Country</h2>
 
-        {scores
-          .sort((country1, country2) => {
-            return country1.name.localeCompare(country2.name);
-          })
-          .map((score, index) => {
-            return (
-              <div className="high-scores-card">
-                <h1 className="card-title">HIGH SCORES: {score.name}</h1>
-                {score.scores
-                  .sort((firstScore, secondScore) => {
-                    return parseFloat(secondScore.s) - parseFloat(firstScore.s);
-                  })
-                  .map((score) => {
-                    return <PlayerScore score={score} />;
-                  })}
-              </div>
-            );
-          })}
+        {scores.map((score, index) => {
+          return (
+            <div className="high-scores-card">
+              <h3 className="card-title">HIGH SCORES: {score.name}</h3>
+              {score.scores.map((score, index) => {
+                return <PlayerScore key={score.s} score={score} />;
+              })}
+            </div>
+          );
+        })}
       </div>
     </>
   );

@@ -1,11 +1,11 @@
 import React from "react";
- function PlayerScore({score}){
-     return (
-       <div className="card-row">
-         <h2 className="score-name">{score.n}</h2>
-         <h2 className="score-point">{score.s}</h2>
-       </div>
-     );
- }
+function PlayerScore({ score }) {
+  return (
+    <div className="card-row">
+      <p className="score-name">{score.n.toUpperCase()}</p>
+      <p className="score-point">{score.s}</p>
+    </div>
+  );
+}
 
- export default PlayerScore
+export default PlayerScore;
